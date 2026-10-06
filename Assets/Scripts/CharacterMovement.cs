@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     float y;
     const float gravity = -20f;
     const float jumpHeight = 1f;
+    private byte health = 3;
     Vector3 reset;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,9 +39,23 @@ public class CharacterMovement : MonoBehaviour
         camera.transform.position = new Vector3(pos.x, pos.y + 5, pos.z - 10);
     }
 
+    public void takeDamage() {
+        health -= 1;
+        if (health == 0) {
+            kill();
+        }
+        Debug.Log("Took damage! Current health: " + health);
+    }
+
+    public void heal() {
+        health += 1;
+        Debug.Log("Gained Health! Current health: " + health);
+    }
+
     public void kill() {
         characterController.enabled = false;
         transform.position = reset;
+        health = 3;
         characterController.enabled = true;
     }
 }

@@ -15,6 +15,6 @@ public class WinTrigger : MonoBehaviour
 
         winPannel.SetActive(true);
         CharacterMovement character = other.GetComponent<CharacterMovement>();
-        character.kill();
+        // character.kill();
     }
 }
