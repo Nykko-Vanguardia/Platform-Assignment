@@ -21,9 +21,10 @@ public class LaserLogic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.name != "Player") return;
+        if (other.tag != "Player") return;
 
-        CharacterMovement character = other.GetComponent<CharacterMovement>();
+        Character character = other.GetComponent<Character>();
+        Debug.Log(other.name);
         character.takeDamage();
     }
 }

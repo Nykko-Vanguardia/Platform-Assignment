@@ -11,7 +11,7 @@ public class LaserShooter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        nextShot = (byte)UnityEngine.Random.Range(1, 3);
+        nextShot = (byte)UnityEngine.Random.Range(5, 6);
         lastShot = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         Fire();
     }
